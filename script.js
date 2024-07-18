@@ -1,5 +1,4 @@
-// const exchnageApiLink =
-//   "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/pkr.json";
+const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/"
 // for (let currencyCode in countryList) {
 //   console.log(`${currencyCode}: ${countryList[currencyCode]}`); // currency code country code
 // }
@@ -44,11 +43,13 @@ btn.addEventListener("click", async (evt) => {
   } else {
     // console.log(amountVal)
     // console.log(fromCurrCode.value);
-    exchnageApiLink = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${fromCurrCode.value.toLowerCase()}/${toCurrCode.value.toLowerCase()}.json`;
-    let response = await fetch(exchnageApiLink);
+    rateLink = `${BASE_URL}/${fromCurrCode.value.toLowerCase()}.json`
+    let response = await fetch(rateLink);
     // console.log(response)
     let data = await response.json()
-    console.log(data)
-    msg.innerText = `${amountVal} ${fromCurrCode.value} = ${amountVal * data[toCurrCode.value.toLowerCase()]} ${toCurrCode.value}`
+    console.log("Data" + data)
+    rate = data[fromCurrCode.value.toLowerCase()][toCurrCode.value.toLowerCase()]
+    console.log("Rate: " + rate)
+    msg.innerText = `${amountVal} ${fromCurrCode.value} = ${amountVal * rate} ${toCurrCode.value}`
   }
 });
