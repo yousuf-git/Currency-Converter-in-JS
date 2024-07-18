@@ -50,6 +50,6 @@ btn.addEventListener("click", async (evt) => {
     console.log("Data" + data)
     rate = data[fromCurrCode.value.toLowerCase()][toCurrCode.value.toLowerCase()]
     console.log("Rate: " + rate)
-    msg.innerText = `${amountVal} ${fromCurrCode.value} = ${amountVal * rate} ${toCurrCode.value}`
+    msg.innerText = `${amountVal} ${fromCurrCode.value} = ${(amountVal * rate).toFixed(2)} ${toCurrCode.value}`
   }
 });
