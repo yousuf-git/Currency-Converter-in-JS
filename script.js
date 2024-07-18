@@ -1,4 +1,4 @@
-const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/"
+const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies"
 // for (let currencyCode in countryList) {
 //   console.log(`${currencyCode}: ${countryList[currencyCode]}`); // currency code country code
 // }
